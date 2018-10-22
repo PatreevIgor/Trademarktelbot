@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
-module Constant
+class Constant
   BEST_BUY_OFFER_URL   = 'https://market.dota2.net/api/BestBuyOffer/'\
                          '%<class_id>s_%<instance_id>s/?key=%<api_market_key>s'
   BEST_SELL_OFFER_URL  = 'https://market.dota2.net/api/BestSellOffer/'\
                          '%<class_id>s_%<instance_id>s/?key=%<api_market_key>s'
   CREATE_ORDER_URL     = 'https://market.dota2.net/api/ProcessOrder/'\
                          '%<class_id>s/%<instance_id>s/%<price>s/?key=%<api_market_key>s'
+  CURRENT_TRADES_URL   = 'https://market.dota2.net/api/Trades/?key=%<api_market_key>s'
   DELETE_ORDERS_URL    = 'https://market.dota2.net/api/DeleteOrders/?key=%<api_market_key>s'
   ITEM_HISTORY_URL     = 'https://market.dota2.net/api/ItemHistory/%<class_id>s_%<instance_id>s/?key=%<api_market_key>s'
   ITEM_LINK_URL        = 'https://market.dota2.net/item/%<class_id>s-%<instance_id>s-%<i_market_hash_name>s/'
   REMOVE_ALL_URL       = 'https://market.dota2.net/api/RemoveAll/?key=%<api_market_key>s'
   LAST_50_SALES_URL    = 'https://market.dota2.net/history/json/'
-  NOT_SALE_ITEMS_URL   = 'https://market.dota2.net/api/GetInv/?key=%<api_market_key>s'
+  INVENTORY_ITEMS_URL  = 'https://market.dota2.net/api/GetInv/?key=%<api_market_key>s'
   SALE_ITEMS_URL       = 'https://market.dota2.net/api/GetMySellOffers/?key=%<api_market_key>s'
   ITEM_INFORMATION_URL = 'https://market.dota2.net/api/ItemInfo/%<class_id>s_%<instance_id>s/ru/?key=%<api_market_key>s'
   GET_ORDERS_LOG_URL   = 'https://market.dota2.net/api/GetOrdersLog/?key=%<api_market_key>s'
