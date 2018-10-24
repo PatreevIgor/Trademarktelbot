@@ -2,9 +2,7 @@
 
 class MainController < ApplicationController
   def index
-    @current_trades  = information_provider.get_current_trades
-    @inventory_items = information_provider.get_inventory_items
-    @items_on_sale   = information_provider.get_items_on_sale
+    # some code
   end
 
   private
