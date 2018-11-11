@@ -2,10 +2,10 @@
 
 class TaskExecuter
   def find_new_cheap_items
-    last_50_sales.each do |item|
-      if inventary_has_item?(item)
-        puts 'next'
-      else 
+    last_50_sales_til_1_rub.each do |item|
+      if inventary_has_similar_item?(item)
+        puts 'inventary_has_similar_item = ' + item['hash_name'].to_s
+      else
         puts 'new items: ' + item['hash_name']
       end
     end
@@ -13,8 +13,8 @@ class TaskExecuter
 
   private
 
-  def last_50_sales
-    information_provider.last_50_sales
+  def last_50_sales_til_1_rub
+    information_provider.last_50_sales_til_1_rub
   end
 
   def information_provider
@@ -25,8 +25,14 @@ class TaskExecuter
     information_provider.inventory_items + information_provider.my_sell_offers
   end
 
-  def inventary_has_item?(new_item)
-    my_item_names.include?(new_item['hash_name']) ? true : false
+  def inventary_has_similar_item?(new_item)
+    result = false
+    my_item_names.each do |my_item_name|
+      result = true if my_item_name.include?(new_item['hash_name'])
+      break if result == true
+    end
+
+    result
   end
 
   def my_item_names
