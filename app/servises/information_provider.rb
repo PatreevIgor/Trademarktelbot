@@ -43,4 +43,15 @@ class InformationProvider
 
     massive_item_names.uniq
   end
+
+  def item_inscribed?(item)
+    url = format(Constant::ITEM_INFORMATION_URL, class_id:       item['class_id'],
+                                                 instance_id:    item['instance_id'],
+                                                 api_market_key: Rails.application.secrets.api_market_key)
+    if Connection.send_json_request(url)['quality'] == 'Inscribed'
+      true
+    else
+      false
+    end
+  end
 end

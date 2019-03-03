@@ -3,10 +3,10 @@
 class TaskExecuter
   def find_new_cheap_items
     last_50_sales_til_1_rub.each do |item|
-      if inventary_has_similar_item?(item)
+      if inventary_has_similar_item?(item) 
         puts 'inventary_has_similar_item = ' + item['hash_name'].to_s
-      else
-        puts 'new items: ' + item['hash_name']
+      elsif !inventary_has_similar_item?(item) && information_provider.item_inscribed?(item)
+        puts 'new inscribed items: ' + item['hash_name']
       end
     end
   end

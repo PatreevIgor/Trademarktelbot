@@ -15,7 +15,7 @@ class Constant
   LAST_50_SALES_URL    = 'https://market.dota2.net/history/json/'
   INVENTORY_ITEMS_URL  = 'https://market.dota2.net/api/GetInv/?key=%<api_market_key>s'
   MY_SELL_OFFERS_URL   = 'https://market.dota2.net/api/GetMySellOffers/?key=%<api_market_key>s'
-  ITEM_INFORMATION_URL = 'https://market.dota2.net/api/ItemInfo/%<class_id>s_%<instance_id>s/ru/?key=%<api_market_key>s'
+  ITEM_INFORMATION_URL = 'https://market.dota2.net/api/ItemInfo/%<class_id>s_%<instance_id>s/en/?key=%<api_market_key>s'
   GET_ORDERS_LOG_URL   = 'https://market.dota2.net/api/GetOrdersLog/?key=%<api_market_key>s'
   UPDATE_ORDER_URL     = 'https://market.dota2.net/api/UpdateOrder/'\
                          '%<class_id>s/%<instance_id>s/%<price>s/?key=%<api_market_key>s'
