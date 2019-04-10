@@ -1,3 +1,5 @@
+Item.delete_all
+
 Item.create(hero_name: "Axe", title: "Auspicious Berserker's Witchslayer", link: "https://market.dota2.net/item/340916211-341626141-Auspicious%20Berserker's%20Witchslayer/")
 Item.create(hero_name: "Axe", title: "Corrupted Wyvernguard Edge", link: "https://market.dota2.net/item/254504425-253354499-Corrupted%20Wyvernguard%20Edge/")
 Item.create(hero_name: "Axe", title: "Auspicious Wyvernguard Edge", link: "https://market.dota2.net/item/647712487-340885147-Auspicious%20Wyvernguard%20Edge/")

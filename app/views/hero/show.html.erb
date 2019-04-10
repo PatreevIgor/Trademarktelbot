@@ -1,0 +1,23 @@
+<h1>Hero Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>link</th>
+      <th>Image_link</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hero_items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.link %></td>
+        <td><%= image_tag(item.image_link) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
