@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddItemsTable < ActiveRecord::Migration[5.1]
   def change
     create_table :items do |t|
@@ -33,6 +35,8 @@ class AddItemsTable < ActiveRecord::Migration[5.1]
       t.string  :type_new
       t.integer :offer_live_time
       t.string  :placed
+      t.string  :hero_name
+      t.string  :title
 
       t.timestamps
     end

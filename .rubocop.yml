@@ -8,3 +8,5 @@ AllCops:
   Exclude:
     - 'bin/setup'
     - 'bin/update'
+    - 'db/migrate/*'
+    - 'db/*'

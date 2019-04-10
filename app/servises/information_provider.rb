@@ -48,10 +48,7 @@ class InformationProvider
     url = format(Constant::ITEM_INFORMATION_URL, class_id:       item['class_id'],
                                                  instance_id:    item['instance_id'],
                                                  api_market_key: Rails.application.secrets.api_market_key)
-    if Connection.send_json_request(url)['quality'] == 'Inscribed'
-      true
-    else
-      false
-    end
+
+    Connection.send_json_request(url)['quality'] == 'Inscribed'
   end
 end
