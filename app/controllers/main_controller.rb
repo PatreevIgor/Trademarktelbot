@@ -2,7 +2,7 @@
 
 class MainController < ApplicationController
   def index
-    task_executer.find_new_cheap_items
+    # task_executer.find_new_cheap_items
   end
 
   private

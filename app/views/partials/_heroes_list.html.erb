@@ -1,0 +1,5 @@
+<% (FileManager.file_folder_list('public/uploads/Heroes_Weapons/')).each do |hero_name| %>
+  <li class="nav-item">
+    <a class="nav-link" href="/"><%= DataCleaner.clean_hero_name(hero_name) %></a>
+  </li>
+<% end %>
