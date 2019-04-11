@@ -1,6 +1,6 @@
 namespace :delete_dubl_items do
   task run: :environment do
-    m = %w[Infused Cursed Corrupted Autographed Genuine Auspicious Inscribed]
+    m = %w[Infused Cursed Corrupted Autographed Genuine Auspicious Inscribed Heroic]
 
     m.each do |prefix|
       items = Item.all.where(['title LIKE ?', prefix + ' %'])
@@ -27,5 +27,5 @@ def delete_dubl_items
     end
   end
 
-  # puts "Deleted #{n} Items"
+  puts "Deleted #{n} Items"
 end
