@@ -1,14 +1,20 @@
 # frozen_string_literal: true
 
 class InformationProvider
+  attr_reader :api_market_key
+
+  def initialize
+    @api_market_key = Rails.application.secrets.api_market_key
+  end
+
   def inventory_items
-    url = format(Constant::INVENTORY_ITEMS_URL, api_market_key: Rails.application.secrets.api_market_key)
+    url = format(Constant::INVENTORY_ITEMS_URL, api_market_key: api_market_key)
 
     Connection.send_json_request(url)['data']
   end
 
   def my_sell_offers
-    url = format(Constant::MY_SELL_OFFERS_URL, api_market_key: Rails.application.secrets.api_market_key)
+    url = format(Constant::MY_SELL_OFFERS_URL, api_market_key: api_market_key)
 
     Connection.send_json_request(url)['offers']
   end
@@ -42,13 +48,5 @@ class InformationProvider
     end
 
     massive_item_names.uniq
-  end
-
-  def item_inscribed?(item)
-    url = format(Constant::ITEM_INFORMATION_URL, class_id:       item['class_id'],
-                                                 instance_id:    item['instance_id'],
-                                                 api_market_key: Rails.application.secrets.api_market_key)
-
-    Connection.send_json_request(url)['quality'] == 'Inscribed'
   end
 end
